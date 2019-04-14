@@ -26,7 +26,7 @@
 HANDLE mainTaskHandle  = NULL;
 HANDLE otherTaskHandle = NULL;
 
-#define PHONE_NUMBER "0033673128710"
+#define PHONE_NUMBER "YOURPHONENUMBER"
 static uint8_t flag = 0;
 
 void SMSInit()
@@ -224,10 +224,10 @@ void AppMainTask(VOID *pData)
     API_Event_t* event=NULL;
 
     Init();
-    
+    /*
     otherTaskHandle = OS_CreateTask(LoopTask ,
         NULL, NULL, AppMain_TASK_STACK_SIZE, AppMain_TASK_PRIORITY, 0, 0, "ohter Task");
-        
+    */    
     while(1)
     {
         if(OS_WaitEvent(mainTaskHandle, &event, OS_TIME_OUT_WAIT_FOREVER))
