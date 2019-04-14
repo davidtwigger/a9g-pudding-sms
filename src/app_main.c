@@ -20,13 +20,14 @@
 
 #include "api_sms.h"
 #include "api_hal_uart.h"
+#include "include/app_main.h"
 
 #define AppMain_TASK_STACK_SIZE    (1024 * 2)
 #define AppMain_TASK_PRIORITY      1 
 HANDLE mainTaskHandle  = NULL;
 HANDLE otherTaskHandle = NULL;
 
-#define PHONE_NUMBER "YOURPHONENUMBER"
+#define PHONE_NUMBER "0033673128710"
 static uint8_t flag = 0;
 
 void SMSInit()
@@ -219,7 +220,7 @@ void EventDispatch(API_Event_t* pEvent)
 }
 
 
-void AppMainTask(VOID *pData)
+void AppMainTask(void *pData)
 {
     API_Event_t* event=NULL;
 
